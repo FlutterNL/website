@@ -29,7 +29,7 @@ class HomePage extends StatelessWidget {
           Expanded(child: Container()),
           Flexible(
             fit: FlexFit.loose,
-            child: Image.asset('flutternl-logo.png'),
+            child: Image.asset('images/flutternl.png'),
           ),
           Expanded(
             child: Row(
