@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -23,21 +25,17 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       body: Column(
         children: [
           Expanded(child: Container()),
-          Flexible(
-            fit: FlexFit.loose,
-            child: Image.asset('images/flutternl.png'),
-          ),
+          Flexible(flex: 2, fit: FlexFit.loose, child: FlutterNlLogo()),
           Expanded(
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 PlatformIcon(
                   icon: FontAwesomeIcons.slack,
-                  target: 'https://flutter-nl.slack.com',
+                  target: 'https://flutter-nl.slack.com/join/shared_invite/zt-fcbvctdg-k75O8dqPmmbhKeCy6YsO4g/',
                 ),
                 PlatformIcon(
                   icon: FontAwesomeIcons.meetup,
@@ -56,6 +54,55 @@ class HomePage extends StatelessWidget {
           ),
         ],
       ),
+    );
+  }
+}
+
+class FlutterNlLogo extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      alignment: AlignmentDirectional.topCenter,
+      children: [
+        Image.asset('images/flutternl_background.png'),
+        FractionallySizedBox(heightFactor: 0.74, child: FlutterNlBlades()),
+      ],
+    );
+  }
+}
+
+class FlutterNlBlades extends StatefulWidget {
+  @override
+  _FlutterNlBladesState createState() => _FlutterNlBladesState();
+}
+
+class _FlutterNlBladesState extends State<FlutterNlBlades>
+    with SingleTickerProviderStateMixin {
+  AnimationController animationController;
+
+  @override
+  void initState() {
+    super.initState();
+
+    animationController = new AnimationController(
+      vsync: this,
+      duration: new Duration(seconds: 7),
+    );
+
+    animationController.repeat();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return new AnimatedBuilder(
+      animation: animationController,
+      child: Image.asset('images/flutternl_foreground.png'),
+      builder: (BuildContext context, Widget _widget) {
+        return new Transform.rotate(
+          angle: animationController.value * 2 * pi,
+          child: _widget,
+        );
+      },
     );
   }
 }
