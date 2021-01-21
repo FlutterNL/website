@@ -99,7 +99,7 @@ class _FlutterNlBladesState extends State<FlutterNlBlades>
       child: Image.asset('images/flutternl_foreground.png'),
       builder: (BuildContext context, Widget _widget) {
         return new Transform.rotate(
-          angle: animationController.value * 2 * pi,
+          angle: - animationController.value * 2 * pi,
           child: _widget,
         );
       },
