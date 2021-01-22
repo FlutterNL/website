@@ -25,4 +25,3 @@ jobs:
          destination_repo: 'FlutterNL/flutternl.github.io'
          user_email: 'flutternl@gmail.com'
          user_name: 'releasebot'
-         destination_branch: 'test'
