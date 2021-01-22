@@ -21,7 +21,7 @@ jobs:
         env:
          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
-         source_file: 'build/web/'
+         source_file: 'build/web/.'
          destination_repo: 'FlutterNL/flutternl.github.io'
          user_email: 'flutternl@gmail.com'
          user_name: 'releasebot'
