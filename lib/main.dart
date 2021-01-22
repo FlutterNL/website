@@ -30,8 +30,8 @@ class HomePage extends StatelessWidget {
           Expanded(child: Container()),
           Flexible(flex: 2, fit: FlexFit.loose, child: FlutterNlLogo()),
           Expanded(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+            child: Wrap(
+              alignment: WrapAlignment.center,
               children: [
                 PlatformIcon(
                   icon: FontAwesomeIcons.slack,
@@ -120,11 +120,11 @@ class PlatformIcon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 16.0, right: 16.0),
+      padding: const EdgeInsets.only(left: 8.0, right: 8.0),
       child: IconButton(
           color: Colors.blue.shade900,
-          iconSize: 36.0,
-          icon: FaIcon(icon),
+          iconSize: 48.0,
+          icon: FaIcon(icon, size: 36.0,),
           onPressed: () {
             if (target != null) {
               launch(target);
