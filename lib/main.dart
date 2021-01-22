@@ -49,6 +49,10 @@ class HomePage extends StatelessWidget {
                   icon: FontAwesomeIcons.linkedinIn,
                   target: 'https://www.linkedin.com/company/flutter-nl/',
                 ),
+                PlatformIcon(
+                  icon: FontAwesomeIcons.youtube,
+                  target: 'https://www.youtube.com/channel/UCVDF_sL3eojqLHLI37xRe3w',
+                ),
               ],
             ),
           ),
