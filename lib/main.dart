@@ -46,12 +46,16 @@ class HomePage extends StatelessWidget {
                   target: 'https://twitter.com/flutternl',
                 ),
                 PlatformIcon(
-                  icon: FontAwesomeIcons.linkedinIn,
-                  target: 'https://www.linkedin.com/company/flutter-nl/',
-                ),
-                PlatformIcon(
                   icon: FontAwesomeIcons.youtube,
                   target: 'https://www.youtube.com/channel/UCVDF_sL3eojqLHLI37xRe3w',
+                ),
+                PlatformIcon(
+                  icon: FontAwesomeIcons.github,
+                  target: 'https://github.com/FlutterNL',
+                ),
+                PlatformIcon(
+                  icon: FontAwesomeIcons.linkedinIn,
+                  target: 'https://www.linkedin.com/company/flutter-nl/',
                 ),
               ],
             ),
@@ -80,8 +84,7 @@ class FlutterNlBlades extends StatefulWidget {
   _FlutterNlBladesState createState() => _FlutterNlBladesState();
 }
 
-class _FlutterNlBladesState extends State<FlutterNlBlades>
-    with SingleTickerProviderStateMixin {
+class _FlutterNlBladesState extends State<FlutterNlBlades> with SingleTickerProviderStateMixin {
   AnimationController animationController;
 
   @override
@@ -103,7 +106,7 @@ class _FlutterNlBladesState extends State<FlutterNlBlades>
       child: Image.asset('images/flutternl_foreground.png'),
       builder: (BuildContext context, Widget _widget) {
         return new Transform.rotate(
-          angle: - animationController.value * 2 * pi,
+          angle: -animationController.value * 2 * pi,
           child: _widget,
         );
       },
@@ -124,7 +127,10 @@ class PlatformIcon extends StatelessWidget {
       child: IconButton(
           color: Colors.blue.shade900,
           iconSize: 48.0,
-          icon: FaIcon(icon, size: 36.0,),
+          icon: FaIcon(
+            icon,
+            size: 36.0,
+          ),
           onPressed: () {
             if (target != null) {
               launch(target);
