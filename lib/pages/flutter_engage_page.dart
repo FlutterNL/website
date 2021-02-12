@@ -12,11 +12,7 @@ class FlutterEngagePage extends StatelessWidget {
         child: Stack(
           alignment: Alignment.topCenter,
           children: [
-            SizedBox.expand(
-                child: Image.asset(
-              'images/flutter_engage_background.jpg',
-              fit: BoxFit.cover,
-            )),
+            _BackgroundImage(),
             Column(
               children: [
                 Expanded(flex: 2, child: FlutterEngageHeader()),
@@ -30,3 +26,32 @@ class FlutterEngagePage extends StatelessWidget {
     );
   }
 }
+
+class _BackgroundImage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return
+      SizedBox.expand(
+          child: OrientationBuilder(
+            builder: (context, orientation) {
+              if(orientation == Orientation.portrait) {
+                return Container(
+                  alignment: Alignment.bottomCenter,
+                  child: _image(context),
+                );
+              }
+              return _image(context);
+            },
+          ));
+  }
+
+  Widget _image(BuildContext context){
+    return Image.asset(
+      'images/flutter_engage_background.jpg',
+      alignment: Alignment.centerRight,
+      fit: BoxFit.cover,
+      height: MediaQuery.of(context).size.width * 1.5,
+    );
+  }
+}
+
