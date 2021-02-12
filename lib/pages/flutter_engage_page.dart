@@ -21,7 +21,7 @@ class FlutterEngagePage extends StatelessWidget {
               children: [
                 Expanded(flex: 2, child: FlutterEngageHeader()),
                 PlatformIcons(color: Colors.blue.shade700),
-                Expanded(flex: 4, child: Container()),
+                Expanded(flex: 3, child: Container()),
               ],
             ),
           ],

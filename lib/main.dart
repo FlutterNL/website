@@ -14,7 +14,11 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: FlutterEngagePage(),
+      home: _isShowingEvent() ? FlutterEngagePage() : DefaultHomePage(),
     );
+  }
+
+  bool _isShowingEvent(){
+    return DateTime.now().isBefore(DateTime(2021, 3, 5));
   }
 }
