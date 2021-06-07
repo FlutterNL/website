@@ -16,7 +16,8 @@ class PlatformIcons extends StatelessWidget {
       children: [
         _PlatformIcon(
           icon: FontAwesomeIcons.slack,
-          target: 'https://flutter-nl.slack.com/join/shared_invite/zt-fcbvctdg-k75O8dqPmmbhKeCy6YsO4g/',
+          target:
+              'https://flutter-nl.slack.com/join/shared_invite/zt-fcbvctdg-k75O8dqPmmbhKeCy6YsO4g/',
           color: c,
         ),
         _PlatformIcon(
@@ -49,13 +50,13 @@ class PlatformIcons extends StatelessWidget {
   }
 }
 
-
 class _PlatformIcon extends StatelessWidget {
   final IconData icon;
   final String target;
   final Color color;
 
-  const _PlatformIcon({Key key, this.icon, this.target, this.color}) : super(key: key);
+  const _PlatformIcon({Key key, this.icon, this.target, this.color})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
