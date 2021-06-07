@@ -57,4 +57,3 @@ class _EventButton extends StatelessWidget {
           .headline5
           .copyWith(color: Colors.blue.shade900));
 }
-

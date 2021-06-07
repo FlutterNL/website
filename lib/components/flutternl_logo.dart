@@ -1,4 +1,3 @@
-
 import 'dart:math';
 
 import 'package:flutter/material.dart';
@@ -21,7 +20,8 @@ class FlutterNlBlades extends StatefulWidget {
   _FlutterNlBladesState createState() => _FlutterNlBladesState();
 }
 
-class _FlutterNlBladesState extends State<FlutterNlBlades> with SingleTickerProviderStateMixin {
+class _FlutterNlBladesState extends State<FlutterNlBlades>
+    with SingleTickerProviderStateMixin {
   AnimationController animationController;
 
   @override

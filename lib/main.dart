@@ -1,10 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:website/pages/default_page.dart';
-import 'package:website/pages/flutter_engage_page.dart';
+
+import 'model/meetup.dart';
 
 void main() {
   runApp(MyApp());
 }
+
+var nextMeetup = Meetup(
+  date: DateTime(2021, 06, 10, 19, 30),
+  url: 'https://www.meetup.com/FlutterNL/events/278427476/',
+  title: 'Google I/O Flutter Recap',
+);
 
 class MyApp extends StatelessWidget {
   @override
@@ -14,11 +21,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: _isShowingEvent() ? FlutterEngagePage() : DefaultHomePage(),
+      home: DefaultHomePage(nextMeetup),
     );
-  }
-
-  bool _isShowingEvent(){
-    return DateTime.now().isBefore(DateTime(2021, 3, 5));
   }
 }
