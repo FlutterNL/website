@@ -3,6 +3,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class FlutterEngageHeader extends StatelessWidget {
+  const FlutterEngageHeader({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return InkWell(
@@ -37,7 +39,7 @@ class _FlutterNLTitle extends StatelessWidget {
   TextStyle _textStyle(BuildContext context) => GoogleFonts.openSans(
       textStyle: Theme.of(context)
           .textTheme
-          .headline3
+          .headline3!
           .copyWith(color: Colors.blue.shade900));
 }
 
@@ -54,6 +56,6 @@ class _EventButton extends StatelessWidget {
   TextStyle _textStyle(BuildContext context) => GoogleFonts.openSans(
       textStyle: Theme.of(context)
           .textTheme
-          .headline5
+          .headline5!
           .copyWith(color: Colors.blue.shade900));
 }

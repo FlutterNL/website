@@ -3,9 +3,9 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class PlatformIcons extends StatelessWidget {
-  final Color color;
+  final Color? color;
 
-  const PlatformIcons({Key key, this.color}) : super(key: key);
+  const PlatformIcons({Key? key, this.color}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -52,10 +52,11 @@ class PlatformIcons extends StatelessWidget {
 
 class _PlatformIcon extends StatelessWidget {
   final IconData icon;
-  final String target;
+  final String? target;
   final Color color;
 
-  const _PlatformIcon({Key key, this.icon, this.target, this.color})
+  const _PlatformIcon(
+      {Key? key, required this.icon, this.target, required this.color})
       : super(key: key);
 
   @override
@@ -71,7 +72,7 @@ class _PlatformIcon extends StatelessWidget {
           ),
           onPressed: () {
             if (target != null) {
-              launch(target);
+              launch(target!);
             }
           }),
     );

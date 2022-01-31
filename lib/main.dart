@@ -4,7 +4,7 @@ import 'package:website/pages/default_page.dart';
 import 'model/meetup.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 var nextMeetup = Meetup(
@@ -14,6 +14,8 @@ var nextMeetup = Meetup(
 );
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
