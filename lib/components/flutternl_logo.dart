@@ -3,34 +3,39 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 
 class FlutterNlLogo extends StatelessWidget {
+  const FlutterNlLogo({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Stack(
       alignment: AlignmentDirectional.topCenter,
       children: [
         Image.asset('images/flutternl_background.png'),
-        FractionallySizedBox(heightFactor: 0.74, child: FlutterNlBlades()),
+        const FractionallySizedBox(
+            heightFactor: 0.74, child: FlutterNlBlades()),
       ],
     );
   }
 }
 
 class FlutterNlBlades extends StatefulWidget {
+  const FlutterNlBlades({Key? key}) : super(key: key);
+
   @override
   _FlutterNlBladesState createState() => _FlutterNlBladesState();
 }
 
 class _FlutterNlBladesState extends State<FlutterNlBlades>
     with SingleTickerProviderStateMixin {
-  AnimationController animationController;
+  late AnimationController animationController;
 
   @override
   void initState() {
     super.initState();
 
-    animationController = new AnimationController(
+    animationController = AnimationController(
       vsync: this,
-      duration: new Duration(seconds: 7),
+      duration: const Duration(seconds: 7),
     );
 
     animationController.repeat();
@@ -38,11 +43,11 @@ class _FlutterNlBladesState extends State<FlutterNlBlades>
 
   @override
   Widget build(BuildContext context) {
-    return new AnimatedBuilder(
+    return AnimatedBuilder(
       animation: animationController,
       child: Image.asset('images/flutternl_foreground.png'),
-      builder: (BuildContext context, Widget _widget) {
-        return new Transform.rotate(
+      builder: (BuildContext context, Widget? _widget) {
+        return Transform.rotate(
           angle: -animationController.value * 2 * pi,
           child: _widget,
         );

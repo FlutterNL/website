@@ -8,7 +8,7 @@ import 'package:website/model/meetup.dart';
 class DefaultHomePage extends StatelessWidget {
   final Meetup nextMeetup;
 
-  DefaultHomePage(this.nextMeetup);
+  const DefaultHomePage(this.nextMeetup, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,9 +16,9 @@ class DefaultHomePage extends StatelessWidget {
       body: Column(
         children: [
           Expanded(child: Container()),
-          Flexible(flex: 2, fit: FlexFit.loose, child: FlutterNlLogo()),
+          const Flexible(flex: 2, fit: FlexFit.loose, child: FlutterNlLogo()),
           if (_isShowingEvent()) NextMeetupWidget(nextMeetup),
-          Expanded(
+          const Expanded(
             child: PlatformIcons(),
           ),
         ],
@@ -34,7 +34,7 @@ class DefaultHomePage extends StatelessWidget {
 class NextMeetupWidget extends StatelessWidget {
   final Meetup nextMeetup;
 
-  const NextMeetupWidget(this.nextMeetup, {Key key}) : super(key: key);
+  const NextMeetupWidget(this.nextMeetup, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -60,7 +60,7 @@ class NextMeetupWidget extends StatelessWidget {
             ),
             Text(
               nextMeetup.title,
-              style: Theme.of(context).textTheme.headline3.copyWith(
+              style: Theme.of(context).textTheme.headline3!.copyWith(
                     color: Colors.blueGrey,
                   ),
               textAlign: TextAlign.center,
