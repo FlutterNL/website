@@ -1,8 +1,10 @@
+import 'package:confetti/confetti.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:website/components/flutternl_logo.dart';
 import 'package:website/components/platform_icons.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'dart:math' as math;
 
 const _meetupUrl = 'https://www.meetup.com/FlutterNL/events/283742843/';
 enum _ScreenSize {
@@ -11,8 +13,34 @@ enum _ScreenSize {
   large,
 }
 
-class FlutterFestival2022 extends StatelessWidget {
+class FlutterFestival2022 extends StatefulWidget {
   const FlutterFestival2022({Key? key}) : super(key: key);
+
+  @override
+  State<FlutterFestival2022> createState() => _FlutterFestival2022State();
+}
+
+class _FlutterFestival2022State extends State<FlutterFestival2022> {
+  late ConfettiController _confettiControllerLeft;
+  late ConfettiController _confettiControllerRight;
+
+  @override
+  void initState() {
+    super.initState();
+    _confettiControllerLeft =
+        ConfettiController(duration: const Duration(seconds: 10));
+    _confettiControllerRight =
+        ConfettiController(duration: const Duration(seconds: 10));
+    _confettiControllerLeft.play();
+    _confettiControllerRight.play();
+  }
+
+  @override
+  void dispose() {
+    _confettiControllerLeft.dispose();
+    _confettiControllerRight.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -66,9 +94,32 @@ class FlutterFestival2022 extends StatelessWidget {
                 const Expanded(child: PlatformIcons()),
               ],
             ),
-          )
+          ),
+          Align(
+            alignment: Alignment.bottomLeft,
+            child: _confettiWidget(_confettiControllerLeft, -math.pi/3),
+          ),
+          Align(
+            alignment: Alignment.bottomRight,
+            child: _confettiWidget(_confettiControllerLeft, -2 * math.pi/3),
+          ),
         ],
       ),
+    );
+  }
+
+  ConfettiWidget _confettiWidget(ConfettiController controller, double direction){
+    return ConfettiWidget(
+      confettiController: controller,
+      shouldLoop: true,
+      blastDirection: direction, // radial value - RIGHT
+      emissionFrequency: 0.01,
+      maxBlastForce : 50,
+      minBlastForce: 12.5,
+      minimumSize: const Size(5,5), // set the minimum potential size for the confetti (width, height)
+      maximumSize: const Size(25, 25), // set the maximum potential size for the confetti (width, height)
+      numberOfParticles: 1,
+      gravity: 0.1,
     );
   }
 
