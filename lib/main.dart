@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:website/pages/default_page.dart';
+import 'package:website/pages/flutter_festival_page.dart';
 
 import 'model/meetup.dart';
 
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: DefaultHomePage(nextMeetup),
+      home: FlutterFestival2022(),
     );
   }
 }
