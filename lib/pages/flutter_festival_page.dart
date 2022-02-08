@@ -113,7 +113,7 @@ class _FlutterFestival2022State extends State<FlutterFestival2022> {
       confettiController: controller,
       shouldLoop: true,
       blastDirection: direction, // radial value - RIGHT
-      emissionFrequency: 0.01,
+      emissionFrequency: 0.02,
       maxBlastForce : 50,
       minBlastForce: 12.5,
       minimumSize: const Size(5,5), // set the minimum potential size for the confetti (width, height)
