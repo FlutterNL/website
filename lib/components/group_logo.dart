@@ -33,9 +33,10 @@ class _BladesState extends State<_Blades> with SingleTickerProviderStateMixin {
   void initState() {
     super.initState();
 
+    final duration = widget.brand == 'netherlands' ? 5 : 7;
     animationController = AnimationController(
       vsync: this,
-      duration: const Duration(seconds: 7),
+      duration: Duration(seconds: duration),
     );
 
     animationController.repeat();

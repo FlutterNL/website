@@ -15,7 +15,7 @@ var nextMeetup = Meetup(
   title: 'Google I/O Flutter Recap',
 );
 
-var flutterFestivalDate = DateTime(2022, 03, 24, 23, 30);
+var flutterNlRebrandDate = DateTime(2023, 04, 13, 18, 30);
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -23,10 +23,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Widget homePage;
-    if (DateTime.now().isBefore(flutterFestivalDate)) {
-      homePage = const FlutterFestival2022();
+    if (DateTime.now().isBefore(flutterNlRebrandDate)) {
+      homePage = DefaultHomePage(nextMeetup);
     } else {
-      homePage = MeetupGroupPage();
+      homePage = const MeetupGroupPage();
     }
     return MaterialApp(
       title: 'Flutter Netherlands',
