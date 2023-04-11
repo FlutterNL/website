@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:website/components/flutternl_logo.dart';
+import 'package:website/components/group_logo.dart';
 import 'package:website/components/platform_icons.dart';
 import 'package:website/model/meetup.dart';
 
@@ -16,7 +17,7 @@ class DefaultHomePage extends StatelessWidget {
       body: Column(
         children: [
           Expanded(child: Container()),
-          const Flexible(flex: 2, fit: FlexFit.loose, child: FlutterNlLogo()),
+          const Flexible(flex: 2, fit: FlexFit.loose, child: GroupLogo('holland')),
           if (_isShowingEvent()) NextMeetupWidget(nextMeetup),
           const Expanded(
             child: PlatformIcons(),

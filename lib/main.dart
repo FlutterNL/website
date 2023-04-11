@@ -3,6 +3,7 @@ import 'package:website/pages/default_page.dart';
 import 'package:website/pages/flutter_festival_page.dart';
 
 import 'model/meetup.dart';
+import 'pages/meetup_group_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -22,10 +23,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Widget homePage;
-    if(DateTime.now().isBefore(flutterFestivalDate)){
+    if (DateTime.now().isBefore(flutterFestivalDate)) {
       homePage = const FlutterFestival2022();
-    }else{
-      homePage = DefaultHomePage(nextMeetup);
+    } else {
+      homePage = MeetupGroupPage();
     }
     return MaterialApp(
       title: 'Flutter Netherlands',
