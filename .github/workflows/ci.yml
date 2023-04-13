@@ -23,5 +23,6 @@ jobs:
         with:
          source_file: 'build/web/.'
          destination_repo: 'FlutterNL/flutternl.github.io'
+         destination_branch: 'master'
          user_email: 'r.floor.1@gmail.com'
          user_name: 'releasebot'
