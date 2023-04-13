@@ -19,7 +19,7 @@ class DefaultHomePage extends StatelessWidget {
           const Flexible(flex: 2, fit: FlexFit.loose, child: GroupLogo('netherlands')),
           if (_isShowingEvent()) NextMeetupWidget(nextMeetup),
           const Expanded(
-            child: PlatformIcons(),
+            child: PlatformIcons(showMeetupLogo: true),
           ),
         ],
       ),

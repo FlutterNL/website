@@ -4,8 +4,9 @@ import 'package:url_launcher/url_launcher.dart';
 
 class PlatformIcons extends StatelessWidget {
   final Color? color;
+  final bool showMeetupLogo;
 
-  const PlatformIcons({Key? key, this.color}) : super(key: key);
+  const PlatformIcons({Key? key, this.color, this.showMeetupLogo = false}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -20,11 +21,12 @@ class PlatformIcons extends StatelessWidget {
               'https://flutter-nl.slack.com/join/shared_invite/zt-fcbvctdg-k75O8dqPmmbhKeCy6YsO4g/',
           color: c,
         ),
-        // PlatformIcon(
-        //   icon: FontAwesomeIcons.meetup,
-        //   target: 'https://www.meetup.com/FlutterNL',
-        //   color: c,
-        // ),
+        if (showMeetupLogo)
+          PlatformIcon(
+            icon: FontAwesomeIcons.meetup,
+            target: 'https://www.meetup.com/FlutterNL',
+            color: c,
+          ),
         PlatformIcon(
           icon: FontAwesomeIcons.twitter,
           target: 'https://twitter.com/flutternl',
