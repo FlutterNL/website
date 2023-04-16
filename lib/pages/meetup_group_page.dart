@@ -38,7 +38,10 @@ class _LargeContent extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 16.0),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 8.0,
+                  vertical: 16.0,
+                ),
                 child: Image.asset('images/logos/meetup_network.png'),
               ),
               Padding(
@@ -53,6 +56,16 @@ class _LargeContent extends StatelessWidget {
   }
 }
 
+const _flutterHollandMeetupLogo = _LogoForMeetup(
+  brand: 'holland',
+  meetupUrl: 'https://www.meetup.com/flutter-holland',
+);
+
+const _flutterTwenteMeetupLogo = _LogoForMeetup(
+  brand: 'twente',
+  meetupUrl: 'https://www.meetup.com/dutch-flutter-meetup/',
+);
+
 class _MeetupGroupLargeBody extends StatelessWidget {
   const _MeetupGroupLargeBody({Key? key}) : super(key: key);
 
@@ -64,17 +77,11 @@ class _MeetupGroupLargeBody extends StatelessWidget {
         child: Row(
           children: const [
             Expanded(
-              child: _LogoForMeetup(
-                brand: 'holland',
-                meetupUrl: 'https://www.meetup.com/nl-NL/flutternl',
-              ),
+              child: _flutterHollandMeetupLogo,
             ),
             Expanded(child: GroupLogo('netherlands')),
             Expanded(
-              child: _LogoForMeetup(
-                brand: 'twente',
-                meetupUrl: 'https://www.meetup.com/dutch-flutter-meetup/',
-              ),
+              child: _flutterTwenteMeetupLogo,
             ),
           ],
         ),
@@ -101,16 +108,10 @@ class _SmallContent extends StatelessWidget {
                     child: Row(
                       children: const [
                         Expanded(
-                          child: _LogoForMeetup(
-                            brand: 'holland',
-                            meetupUrl: 'https://www.meetup.com/nl-NL/flutternl',
-                          ),
+                          child: _flutterHollandMeetupLogo,
                         ),
                         Expanded(
-                          child: _LogoForMeetup(
-                            brand: 'twente',
-                            meetupUrl: 'https://www.meetup.com/dutch-flutter-meetup/',
-                          ),
+                          child: _flutterHollandMeetupLogo,
                         ),
                       ],
                     ),
@@ -136,7 +137,7 @@ class _SmallContent extends StatelessWidget {
           child: Align(
             alignment: Alignment.bottomLeft,
             child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 8.0),
+              padding: const EdgeInsets.all(8.0),
               child: Image.asset('images/logos/meetup_network.png'),
             ),
           ),
