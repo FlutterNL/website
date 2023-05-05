@@ -111,7 +111,7 @@ class _SmallContent extends StatelessWidget {
                           child: _flutterHollandMeetupLogo,
                         ),
                         Expanded(
-                          child: _flutterHollandMeetupLogo,
+                          child: _flutterTwenteMeetupLogo,
                         ),
                       ],
                     ),
